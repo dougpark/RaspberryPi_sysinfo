@@ -1,0 +1,84 @@
+#!/bin/bash
+
+# Include the python script in this shell script, script ends with "END_SCRIPT"
+python - <<'END_SCRIPT'
+
+# Raspberry Pi
+# SysInfo
+# August 2022
+
+import subprocess
+import sys
+import platform
+import os
+
+print("*** sysinfo ***")
+print("A self sufficient script to display current info about this Raspberry Pi")
+print("August 2022\n")
+
+# Host Name
+cmd = "hostname | tr -d \'\\n\'"
+HOST = subprocess.check_output(cmd, shell=True).decode("utf-8")
+print("Host: " + HOST)
+
+# IP Address
+cmd = "hostname -I | cut -d\' \' -f1"
+IP = subprocess.check_output(cmd, shell=True).decode("utf-8")
+print("IP:" + IP)
+
+# Running on Raspberry Pi
+cmd = "cat /etc/apt/sources.list.d/raspi.list | grep rasp | head -n1"
+Rasp = subprocess.check_output(cmd, shell=True).decode("utf-8")
+print("")
+print("Raspberry Pi: " + Rasp + "\n")
+
+# Linux Info
+print("OS machine: " + os.uname().machine)
+print("OS: " + str(os.uname()))
+print("platform: ", platform.platform())
+print("Processor: ", platform.processor())
+print("Architecture: ", platform.architecture())
+
+# OS Release Info
+cmd = "cat /etc/os-release"
+Release = subprocess.check_output(cmd, shell=True).decode("utf-8")
+print("Release:" + Release)
+
+# Python Implementation
+print("Python Impl: ", platform.python_implementation())
+
+# Python Version
+print("Python verson: " + platform.python_version())
+
+# Last date Apt was Updated
+cmd = "ls -l /var/cache/apt/pkgcache.bin | cut -d' ' -f6,7,8"
+Apt = subprocess.check_output(cmd, shell=True).decode("utf-8")
+print("Apt last updated: " + Apt)
+
+# Docker version
+cmd = "docker -v"
+Docker = subprocess.check_output(cmd, shell=True).decode("utf-8")
+print("Docker: " + Docker)
+
+# CPU Load
+cmd = "top -bn1 | grep load | awk '{printf \"CPU Load: %.2f\", $(NF-2)}'"
+CPU = subprocess.check_output(cmd, shell=True).decode("utf-8")
+print("CPU: " + CPU)
+
+# Memory Usage
+cmd = "free -m | awk 'NR==2{printf \"Mem: %s/%s MB  %.2f%%\", $3,$2,$3*100/$2 }'"
+MemUsage = subprocess.check_output(cmd, shell=True).decode("utf-8")
+print("Mem: " + MemUsage)
+
+# Disk Usage
+cmd = "df -h | awk '$NF==\"/\"{printf \"Disk: %d/%d GB  %s\", $3,$2,$5}'"
+Disk = subprocess.check_output(cmd, shell=True).decode("utf-8")
+print("Disk: " + Disk)
+
+# CPU Temperature
+cmd = "cat /sys/class/thermal/thermal_zone0/temp |  awk \'{printf \"%.1f C\", $(NF-0) / 1000}\'"  # pylint: disable=line-too-long
+Temp = subprocess.check_output(cmd, shell=True).decode("utf-8")
+print("CPU Temp: " + Temp)
+
+# End of python script in this bash file
+END_SCRIPT
