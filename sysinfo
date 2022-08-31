@@ -33,7 +33,11 @@ print("")
 print("Raspberry Pi: " + Rasp + "\n")
 
 # Linux Info
-print("OS machine: " + os.uname().machine)
+try:
+    print("OS machine: " + os.uname().machine)
+except BaseException:
+    print("OS machine: No OS machine info found")
+    
 print("OS: " + str(os.uname()))
 print("platform: ", platform.platform())
 print("Processor: ", platform.processor())
