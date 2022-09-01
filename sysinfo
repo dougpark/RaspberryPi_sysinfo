@@ -31,17 +31,20 @@ except BaseException:
 # IP Address
 try:
     cmd = "hostname -I | cut -d\' \' -f1"
-    IP = subprocess.check_output(cmd, shell=True).decode("utf-8")
+    IP = subprocess.check_output(cmd, shell=True).decode("utf-8").rstrip()
     print(yellow+"IP: "+reset + IP)
 except BaseException:
     print(yellow+"IP: "+reset + "No IP info found")
 
 # Running on Raspberry Pi
 try:
-    cmd = "cat /etc/apt/sources.list.d/raspi.list | grep rasp | head -n1"
-    Rasp = subprocess.check_output(cmd, shell=True).decode("utf-8")
-    print("")
-    print(yellow+"Raspberry Pi: "+reset + Rasp + "\n")
+    file = "/etc/apt/sources.list.d/raspi.list"
+    if (os.path.exists(file)):
+        cmd = "cat /etc/apt/sources.list.d/raspi.list | grep rasp | head -n1"
+        Rasp = subprocess.check_output(cmd, shell=True).decode("utf-8").rstrip()
+        print(yellow+"Raspberry Pi: "+reset + Rasp)
+    else:
+        print(yellow+"Raspberry Pi: "+reset + "No Raspberry Pi info found")
 except BaseException:
     print(yellow+"Raspberry Pi: "+reset + "No Raspberry Pi info found")
 
@@ -52,10 +55,10 @@ except BaseException:
     print(yellow+"OS machine:"+reset +" No OS machine info found")
 
 # Linux uname
-try:   
-    print(yellow+"OS uname: " +reset+ str(os.uname()))
-except BaseException:
-    print(yellow+"OS uname:"+reset +" No OS uname info found")
+# try:   
+#     print(yellow+"OS uname: " +reset+ str(os.uname()))
+# except BaseException:
+#     print(yellow+"OS uname:"+reset +" No OS uname info found")
 
 # Linux platform
 try:
@@ -77,9 +80,9 @@ except BaseException:
 
 # OS Release Info
 try:
-    cmd = "cat /etc/os-release"
-    Release = subprocess.check_output(cmd, shell=True).decode("utf-8")
-    print(yellow+"Linux Release Info:\n"+reset + Release)
+    cmd = "cat /etc/os-release | grep PRETTY"
+    Release = subprocess.check_output(cmd, shell=True).decode("utf-8").rstrip()
+    print(yellow+"Linux Release Info: "+reset + Release)
 except BaseException:
     print(yellow+"Linux Release Info:"+reset +" No release info found")
 
@@ -98,7 +101,7 @@ except BaseException:
 # Last date Apt was Updated
 try:
     cmd = "ls -l /var/cache/apt/pkgcache.bin | cut -d' ' -f6,7,8"
-    Apt = subprocess.check_output(cmd, shell=True).decode("utf-8")
+    Apt = subprocess.check_output(cmd, shell=True).decode("utf-8").rstrip()
     print(yellow+"Apt last updated: "+reset + Apt)
 except BaseException:
     print(yellow+"Apt last updated:"+reset +" No Apt info found")
@@ -106,7 +109,7 @@ except BaseException:
 # Docker version
 try:
     cmd = "docker -v"
-    Docker = subprocess.check_output(cmd, shell=True).decode("utf-8")
+    Docker = subprocess.check_output(cmd, shell=True).decode("utf-8").rstrip()
     print(yellow+"Docker: "+reset + Docker)
 except BaseException:
     print(yellow+"Docker:"+reset +" No Docker info found")
