@@ -1,5 +1,6 @@
 # SysInfo
 * A simple bash/python script to display info about the current Raspberry Pi
+* Works with other debian distributions as well
 
 # Installation
 * Copy and paste this command into a terminal on your Raspberry Pi
