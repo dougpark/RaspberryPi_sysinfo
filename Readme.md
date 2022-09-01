@@ -6,7 +6,7 @@
 * Make it runnable with the chmod command
 * $ chmod +x sysinfo
 
-# Running sysinfo
+# Run sysinfo
 * Run from the Raspbery Pi command line
 * $ ./sysinfo
 
