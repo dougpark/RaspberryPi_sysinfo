@@ -101,6 +101,26 @@ try:
 except BaseException:
     print(yellow+"Python Impl:"+reset +" No Python Impl info found")    
 
+# Python 64bit
+# file -L $(python -c 'import sys; print(sys.executable)')
+# if grep -q PATTERN file.txt; then
+#     echo found
+# else
+#     echo not found
+# fi
+    
+try:
+    PyB = sys.executable
+    cmd = f"file -L {PyB} | grep -q '64-bit'"
+    try:
+        PyBit = subprocess.check_output(cmd, shell=True).decode("utf-8").rstrip()
+        print(yellow+"Python Bit: "+reset + "64bit")
+    except subprocess.CalledProcessError as err:
+        print(yellow+"Python Bit: "+reset + "32bit")
+    
+except BaseException:
+    print(yellow+"Python Bit:"+reset +" No bit info found")
+
 # Python Version
 try:
     print(yellow+"Python verson: "+reset + str(platform.python_version()))
