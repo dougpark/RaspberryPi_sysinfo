@@ -1,12 +1,8 @@
-#!/bin/bash
-
-# Include the python script in this shell script, script ends with "END_SCRIPT"
-
-python3 - <<'END_SCRIPT'
+#!/usr/bin/env python
 
 # Raspberry Pi
 # SysInfo
-# August 2022
+# September 2022
 
 import subprocess
 import sys
@@ -18,7 +14,7 @@ reset = "\x1b[0m"
 
 print(yellow+ "*** sysinfo ***"+reset)
 print("A self sufficient script to display current info about this Raspberry Pi")
-print("August 2022\n")
+print("September 2022\n")
 
 # Host Name
 try:
@@ -179,5 +175,3 @@ try:
 except BaseException:
     print(yellow+"CPU Temp: exception "+ reset +"No CPU Temp info found")
 
-# End of python script in this bash file
-END_SCRIPT
