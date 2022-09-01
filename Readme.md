@@ -2,12 +2,13 @@
 * A simple bash/python script to display info about the current Raspberry Pi
 
 # Installation
-* Make a new directory and change your workingdir to the new directory
+* Make the ~/bin directory and change your workingdir to the new directory
 * Open the terminal
-* $ mkdir sysinfo
-* $ cd sysinfo
-* Copy sysinfo file to your Raspberry Pi
+* $ mkdir ~/bin
+* $ cd ~/bin
+* Copy sysinfo file from github to your Raspberry Pi
 * From the terminal
+* $ wget -O - https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/install.sh | bash
 * $ wget https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/sysinfo
 
 # Make it runnable
@@ -17,8 +18,10 @@
 
 # Run sysinfo
 * Run from the Raspbery Pi command line
-* From the terminal
-* $ ./sysinfo
+* Open a new terminal window so that ~/bin is in your path
+* Or, close your existing terminal and open a new one
+* Type the sysinfo command
+* $ sysinfo
 
 # Displayed Information
 * Host Name
