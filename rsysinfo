@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# rsysinfo
+# run sysinfo directly from github
+# will always have the most up to date version
+# put in ~/bin
+# chmod +x rsysinfo
+# rsysinfo
+# September 2022
+
+wget -q -O - https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/sysinfo | python
