@@ -35,7 +35,7 @@
 
 # Notes
 * Rasberry Pi 64bit lite 
-    * file command not installed
+    * ```file``` command not installed
 
 # Dependencies
 * Python version 3+
