@@ -25,6 +25,7 @@
 * Architecture
 * OS Release Info
 * Python Implementation
+* Python Kind
 * Python Version
 * Last date apt was updated
 * Docker Version
