@@ -7,4 +7,13 @@
 # rsysinfo
 # September 2022
 
-wget -q -O - https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/sysinfo | python
+# update sysinfo
+wget -q https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/sysinfo 
+chmod +x sysinfo >/dev/null 2>&1
+
+# update rsysinfo
+wget -q https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/rsysinfo 
+chmod +x rsysinfo >/dev/null 2>&1
+
+# run sysinfo from github
+wget -q -O - https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/sysinfo | python3
