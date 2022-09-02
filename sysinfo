@@ -110,12 +110,12 @@ try:
     cmd = f"file -L {PyB} | grep -q '64-bit'"
     try:
         PyBit = subprocess.check_output(cmd, shell=True).decode("utf-8").rstrip()
-        print(yellow+"Python Bit: "+reset + "64bit")
+        print(yellow+"Python Kind: "+reset + "64bit")
     except subprocess.CalledProcessError as err:
-        print(yellow+"Python Bit: "+reset + "32bit")
+        print(yellow+"Python Kind: "+reset + "32bit")
     
 except BaseException:
-    print(yellow+"Python Bit:"+reset +" No bit info found")
+    print(yellow+"Python Kind:"+reset +" No bit info found")
 
 # Python Version
 try:
