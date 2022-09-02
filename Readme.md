@@ -1,5 +1,5 @@
 # SysInfo
-* A python3 script to display info about the current Raspberry Pi
+* A python script to display info about the current Raspberry Pi
 * Works with other debian distributions as well
 
 # Installation
@@ -37,3 +37,5 @@
 * Rasberry Pi 64bit lite 
     * file command not installed
 
+# Dependencies
+* Python version 3+
