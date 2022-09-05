@@ -47,7 +47,7 @@ try:
     print(yellow+"Pi Model:"+reset+MODEL)
 except BaseException:
     print(yellow+"Pi Model: "+reset + "No Pi Model info found")
-    
+
 # Running on Raspberry Pi
 try:
     file = "/etc/apt/sources.list.d/raspi.list"
@@ -114,7 +114,7 @@ except BaseException:
     
 try:
     PyB = sys.executable
-    cmd = f"file -L {PyB} | grep -q '64-bit'"
+    cmd = "file -L "+PyB+" | grep -q '64-bit'"
     try:
         PyBit = subprocess.check_output(cmd, shell=True).decode("utf-8").rstrip()
         print(yellow+"Python Kind: "+reset + "64bit")
