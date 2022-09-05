@@ -40,7 +40,14 @@ try:
 except BaseException:
     print(yellow+"DNS: "+reset + "No DNS info found")
 
-
+# Raspberry Pi Model
+try:
+    cmd = "cat /sys/firmware/devicetree/base/model"
+    MODEL = subprocess.check_output(cmd, shell=True).decode("utf-8").rstrip()
+    print(yellow+"Pi Model:"+reset+MODEL)
+except BaseException:
+    print(yellow+"Pi Model: "+reset + "No Pi Model info found")
+    
 # Running on Raspberry Pi
 try:
     file = "/etc/apt/sources.list.d/raspi.list"
