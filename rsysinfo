@@ -7,16 +7,6 @@
 # rsysinfo
 # September 2022
 
-# # update sysinfo
-# rm sysinfo >/dev/null 2>&1
-# wget -q https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/sysinfo 
-# chmod +x sysinfo >/dev/null 2>&1
-
-# # update rsysinfo
-# rm rsysinfo >/dev/null 2>&1
-# wget -q https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/rsysinfo 
-# chmod +x rsysinfo >/dev/null 2>&1
-
 # Install Everything
 wget -q -O - https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/install.sh | bash
 

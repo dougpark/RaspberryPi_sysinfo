@@ -8,7 +8,7 @@
 * This will download and install the sysinfo script into your ~/bin directory
 
 # Run sysinfo
-* Run from the Raspbery Pi command line
+* Run from the Raspberry Pi command line
 * Open a new terminal window so that ~/bin is in your path
 * Or, close your existing terminal and open a new one
 * Type the sysinfo command
