@@ -34,7 +34,7 @@ except BaseException:
 
 # DNS Server
 try:
-    cmd = "grep 'nameserver' /etc/resolv.conf"
+    cmd = "grep 'nameserver' /etc/resolv.conf | tr '\n' ' '"
     DNS = subprocess.check_output(cmd, shell=True).decode("utf-8").rstrip()
     print(yellow+"DNS: "+reset + DNS)
 except BaseException:
