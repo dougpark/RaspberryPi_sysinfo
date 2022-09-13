@@ -4,7 +4,6 @@
 
 # Installation
 * Copy and paste this command into a terminal on your Raspberry Pi
-* $ 
 ```
 wget -q -O - https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/install.sh | bash
 ```
