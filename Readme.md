@@ -34,9 +34,18 @@
 * Disk Usage
 * CPU Temperature
 
+# rsysinfo
+* Installed with sysinfo
+* Always gets the latest version from GitHub
+* Updates sysinfo and rsysinfo on every run
+
+
 # Notes
 * Rasberry Pi 64bit lite 
     * ```file``` command not installed
 
 # Dependencies
 * Python version 3+
+
+# For More Information
+[Pi Hardware History](https://elinux.org/RPi_HardwareHistory)
