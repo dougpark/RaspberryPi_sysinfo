@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-echo sysinfo install started
-
 BASEPATH=https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/
 FILES=( "sysinfo" "rsysinfo" "Help.md")
+
+echo sysinfo install started
 
 # Setup ~/bin directory
 mkdir ~/bin >/dev/null 2>&1

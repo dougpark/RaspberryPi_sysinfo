@@ -4,7 +4,10 @@
 
 # Installation
 * Copy and paste this command into a terminal on your Raspberry Pi
-* $ ```wget -q -O - https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/install.sh | bash```
+* $ 
+```
+wget -q -O - https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/install.sh | bash
+```
 * This will download and install the sysinfo script into your ~/bin directory
 
 # Run sysinfo
@@ -17,7 +20,7 @@
 # Displayed Information
 * Host Name
 * IP Address
-* DNS Server
+* DNS Servers
 * Test if running on Raspberry Pi
 * Linux machine
 * Linux platform
