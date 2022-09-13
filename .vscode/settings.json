@@ -2,5 +2,9 @@
     "cSpell.language": "en",
     "cSpell.words": [
         "sysinfo"
+    ],
+    "cSpell.enableFiletypes": [
+        "!plaintext",
+        "!python"
     ]
 }
