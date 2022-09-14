@@ -4,14 +4,15 @@
 
 # Installation
 * Copy and paste this command into a terminal on your Raspberry Pi
-```bash
+```shell
 wget -q -O - https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/install.sh | bash
 ```
 * This will download and install the sysinfo script into your ~/bin directory
 
 # Run sysinfo
 * Run from the Raspberry Pi command line
-* Open a new terminal window so that ~/bin is in your path
+* Tip: Raspberry Pi OS will automatically add ~/bin to your path when you open a new terminal
+* Open a new terminal window so that ~/bin is put in your path
 * Or, close your existing terminal and open a new one
 * Type the sysinfo command
 * $ sysinfo
@@ -41,13 +42,13 @@ wget -q -O - https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/mast
 * Always gets the latest version from GitHub
 * Updates sysinfo and rsysinfo on every run
 
-
 # Notes
 * Rasberry Pi 64bit lite 
     * ```file``` command not installed
+* Buster version of the OS does not include Python3 by default
 
 # Dependencies
 * Python version 3+
 
 # For More Information
-[Pi Hardware History](https://elinux.org/RPi_HardwareHistory)
+* [Pi Hardware History](https://elinux.org/RPi_HardwareHistory)
