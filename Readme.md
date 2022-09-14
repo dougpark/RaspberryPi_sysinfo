@@ -39,11 +39,12 @@ wget -q -O - https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/mast
 
 # rsysinfo
 * Installed with sysinfo
+* rsysinfo requires internet access to run, sysinfo runs locally
 * Always gets the latest version from GitHub
 * Updates sysinfo and rsysinfo on every run
 
 # Notes
-* Rasberry Pi 64bit lite 
+* Raspberry Pi 64bit lite 
     * ```file``` command not installed
 * Buster version of the OS does not include Python3 by default
 
