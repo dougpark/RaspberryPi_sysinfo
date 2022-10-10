@@ -18,7 +18,7 @@ do
    echo -n "#"
 done
 echo
-echo sysinfo install complete.
+echo sysinfo install complete
 
 # run this script to download and run the installer
 # wget -q -O - https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/install.sh | bash
