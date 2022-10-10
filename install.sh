@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 BASEPATH=https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/
-FILES=( "sysinfo")
-REMOVE=( "Help.md", "rsysinfo")
+FILES=( "sysinfo", "Help.md")
+REMOVE=( "Help.md", "rsysinfo", "arg")
 
 echo sysinfo install/update started
 
@@ -13,15 +13,15 @@ cd ~/bin >/dev/null 2>&1
 # Install files
 for FILE in "${FILES[@]}"
 do
-   rm $FILE >/dev/null 2>&1
+   rm $FILE >>.sysinfolog 2>&1
    wget -q ${BASEPATH}${FILE} 
-   chmod +x $FILE >/dev/null 2>&1
+   chmod +x $FILE >>.sysinfolog 2>&1
    echo -n "#"
 done
 # Remove files
 for FILE in "${REMOVE[@]}"
 do
-   rm $FILE >/dev/null 2>&1
+   rm $FILE >>.sysinfolog 2>&1
    echo -n "*"
 done
 echo
