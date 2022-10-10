@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+# getopt training from
+# https://www.tutorialspoint.com/python3/python_command_line_arguments.htm
+
 import getopt
 import subprocess
 import sys
@@ -7,12 +10,16 @@ import platform
 import os
 # import curses
 
+version = "1.1"
+
 yellow = "\x1b[33;20m"
 reset = "\x1b[0m"
 
 print(yellow+ "*** sysinfo ***"+reset)
-print("A self sufficient script to display info about this Raspberry Pi")
-print("October 2022\n")
+print("A self sufficient script to display info about this Raspberry Pi\n")
+
+def ver():
+    print("sysinfo "+version +"\n")
 
 def update():
     print("Updating...")
@@ -220,10 +227,9 @@ def help():
     print(out)
     
 def main(argv):
-   inputfile = ''
-   outputfile = ''
+   
    try:
-      opts, args = getopt.getopt(argv,"hitu",["help","info","tips","update"])
+      opts, args = getopt.getopt(argv,"hituv",["help","info","tips","update","version"])
    except getopt.GetoptError:
       help()
       sys.exit(2)
@@ -236,6 +242,9 @@ def main(argv):
          sys.exit()
       elif opt in ("-t", "--tips"):
          tips()
+         sys.exit()
+      elif opt in ("-v", "--version"):
+         ver()
          sys.exit()
    info()
 
