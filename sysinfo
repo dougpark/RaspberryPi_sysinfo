@@ -214,15 +214,16 @@ def tips():
 def help():
     out="""
     usage: sysinfo [option]
-    Options:
-        default        Display useful information about your system
-    
-        -h,--help      Help
-        -u,--update    Update from GitHub
+    default:           Display useful information about this system
+
+    options:
+        -h,--help      Show this help message
+        -i,--info      Display useful information about this system
         -t,--tips      Display helpful Linux tips
+        -u,--update    Update from GitHub
+        -v,--version   Display version info
     
-    More Info:
-        https://github.com/dougpark/RaspberryPi_sysinfo
+    more info:         https://github.com/dougpark/RaspberryPi_sysinfo
     """
     print(out)
     

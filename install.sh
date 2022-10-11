@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 BASEPATH=https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/
-FILES=( "sysinfo" "Help.md")
+FILES=( "sysinfo" )
 REMOVE=( "Help.md" "rsysinfo" "arg")
 
 echo sysinfo install/update started
