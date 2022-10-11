@@ -15,11 +15,12 @@ version = "1.1"
 yellow = "\x1b[33;20m"
 reset = "\x1b[0m"
 
-print(yellow+ "*** sysinfo ***"+reset)
-print("A self sufficient script to display info about this Raspberry Pi\n")
+def header():
+    print(yellow+ "*** sysinfo ***"+reset)
+    print("A self sufficient script to display info about this Raspberry Pi")
 
 def ver():
-    print("sysinfo "+version +"\n")
+    print("sysinfo version "+version)
 
 def update():
     print("Updating...")
@@ -29,6 +30,8 @@ def update():
     print(INSTALL)
 
 def info():
+
+    header()
     
     # Host Name
     try:
@@ -212,19 +215,18 @@ def tips():
     print(out)
 
 def help():
-    out="""
-    usage: sysinfo [option]
-    default:           Display useful information about this system
+    out="""usage: sysinfo [option]
+default:           Display useful information about this system
 
-    options:
-        -h,--help      Show this help message
-        -i,--info      Display useful information about this system
-        -t,--tips      Display helpful Linux tips
-        -u,--update    Update from GitHub
-        -v,--version   Display version info
-    
-    more info:         https://github.com/dougpark/RaspberryPi_sysinfo
-    """
+options:
+    -h,--help      Show this help message
+    -i,--info      Display useful information about this system
+    -t,--tips      Display helpful Linux tips
+    -u,--update    Update from GitHub
+    -v,--version   Display version info
+
+more info:         https://github.com/dougpark/RaspberryPi_sysinfo"""
+    ver()
     print(out)
     
 def main(argv):
