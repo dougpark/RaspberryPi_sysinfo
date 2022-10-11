@@ -222,9 +222,10 @@ options:
     -h,--help      Show this help message
     -i,--info      Display useful information about this system
     -t,--tips      Display helpful Linux tips
-    -u,--update    Update from GitHub
+    -u,--update    Update this sysinfo from GitHub
     -v,--version   Display version info
 
+install:           wget -q -O - https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/install.sh | bash
 more info:         https://github.com/dougpark/RaspberryPi_sysinfo"""
     ver()
     print(out)
