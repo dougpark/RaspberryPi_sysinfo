@@ -15,7 +15,7 @@ wget -q -O - https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/mast
 * Open a new terminal window so that ~/bin is put in your path
 * Or, close your existing terminal and open a new one
 * Type the sysinfo command
-* $ sysinfo
+* $ ```sysinfo```
 
 # Displayed Information
 * Host Name
@@ -37,11 +37,11 @@ wget -q -O - https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/mast
 * Disk Usage
 * CPU Temperature
 
-# rsysinfo
-* Installed with sysinfo
-* rsysinfo requires internet access to run, sysinfo runs locally
+# sysinfo --update
+* Requires internet access to run
 * Always gets the latest version from GitHub
-* Updates sysinfo and rsysinfo on every run
+* Updates sysinfo when run
+* $ ```sysinfo --update```
 
 # Notes
 * Raspberry Pi 64bit lite 
