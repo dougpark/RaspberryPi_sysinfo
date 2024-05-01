@@ -37,11 +37,15 @@ bashrc_file="$HOME/.bashrc"
 if ! grep -qF "source $custom_settings" "$bashrc_file"; then
     # Append the source command to .bashrc
     echo "source $custom_settings" >> "$bashrc_file"
-    source $bashrc_file
+    echo
     echo "Custom settings sourced to ~/.bashrc"
 else
+    echo
     echo "Custom settings already sourced to ~/.bashrc"
 fi
+
+# make sure to reload custom settings
+source $bashrc_file
 
 echo
 echo sysinfo install/update complete
