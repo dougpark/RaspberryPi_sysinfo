@@ -3,8 +3,9 @@
 BASEPATH=https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/
 FILES=( "sysinfo" "custom_settings" )
 REMOVE=( "Help.md" "rsysinfo" "arg")
+VER="v1.1"
 
-echo sysinfo install/update started
+echo sysinfo install/update started $VER
 
 # Setup ~/bin directory
 mkdir ~/bin >/dev/null 2>&1
@@ -48,7 +49,7 @@ fi
 source $bashrc_file
 
 echo
-echo sysinfo install/update complete
+echo sysinfo install/update complete $VER
 
 # run this script to download and run the installer
 # wget -q -O - https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/install.sh | bash
