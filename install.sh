@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 BASEPATH=https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/
-FILES=( "sysinfo" "custom_settings" )
-REMOVE=( "Help.md" "rsysinfo" "arg")
-VER="v1.1"
+FILES=( "sysinfo" "sysinfo_settings" )
+REMOVE=( "Help.md" "rsysinfo" "arg" "custom_settings")
+VER="v1.1.2"
 
 echo sysinfo install/update started $VER
 
@@ -26,26 +26,26 @@ do
    echo -n "*"
 done
 
-# add custom_settings
+# add sysinfo_settings
 
 # Path to custom settings file
-custom_settings="/bin/custom_settings"
+sysinfo_settings="~/bin/sysinfo_settings"
 
 # Path to .bashrc
-bashrc_file="$HOME/.bashrc"
+bashrc_file="~/.bashrc"
 
-# Check if custom_settings line already exists in .bashrc
-if ! grep -qF "source $custom_settings" "$bashrc_file"; then
+# Check if sysinfo_settings line already exists in .bashrc
+if ! grep -qF "source $sysinfo_settings" "$bashrc_file"; then
     # Append the source command to .bashrc
-    echo "source $custom_settings" >> "$bashrc_file"
+    echo "source $sysinfo_settings" >> "$bashrc_file"
     echo
-    echo "Custom settings sourced to ~/.bashrc"
+    echo "Sysinfo settings sourced to ~/.bashrc"
 else
     echo
-    echo "Custom settings already sourced to ~/.bashrc"
+    echo "Sysinfo settings already sourced to ~/.bashrc"
 fi
 
-# make sure to reload custom settings
+# make sure to reload to include latest sysinfo settings
 source $bashrc_file
 
 echo
