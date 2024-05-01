@@ -37,6 +37,7 @@ bashrc_file="$HOME/.bashrc"
 if ! grep -qF "source $custom_settings" "$bashrc_file"; then
     # Append the source command to .bashrc
     echo "source $custom_settings" >> "$bashrc_file"
+    source $bashrc_file
     echo "Custom settings sourced to ~/.bashrc"
 else
     echo "Custom settings already sourced to ~/.bashrc"
