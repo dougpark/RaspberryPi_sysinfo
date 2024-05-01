@@ -1,0 +1,8 @@
+# ls director color to orange
+export LS_COLORS="$LS_COLORS:di=38;5;208"
+
+# txt, pdf, doc to yellow
+export LS_COLORS="$LS_COLORS:*.txt=33:*.pdf=33:*.doc=33"
+
+# executable colors to green
+export LS_COLORS="$LS_COLORS:*.sh=01;32:*.bin=01;32"
