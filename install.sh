@@ -3,7 +3,7 @@
 BASEPATH=https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/
 FILES=( "sysinfo" "sysinfo_settings" )
 REMOVE=( "Help.md" "rsysinfo" "arg" "custom_settings")
-VER="v1.1.6"
+VER="v1.1.7"
 
 echo sysinfo install/update started $VER
 

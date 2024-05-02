@@ -37,9 +37,11 @@ def info():
     try:
         cmd = "hostname | tr -d \'\\n\'"
         HOST = subprocess.check_output(cmd, shell=True).decode("utf-8")
-        print(yellow+"Host: "+reset + HOST)
+        #print(yellow+"Host: "+reset + HOST)
+        print(f"{yellow}{'Host:':<20}{reset} {HOST}")
     except BaseException:
-        print("Host: No host info found")
+        #print("Host: No host info found")
+        print(f"{yellow}{'Host:':<20}{reset} No host info found")
 
     # IP Address
     try:
