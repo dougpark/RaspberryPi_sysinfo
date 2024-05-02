@@ -6,3 +6,6 @@ export LS_COLORS="$LS_COLORS:*.txt=33:*.pdf=33:*.doc=33"
 
 # executable colors to green
 export LS_COLORS="$LS_COLORS:*.sh=01;32:*.bin=01;32"
+
+# update aliases
+alias ll='ls -lahF'
