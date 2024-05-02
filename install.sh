@@ -3,7 +3,7 @@
 BASEPATH=https://raw.githubusercontent.com/dougpark/RaspberryPi_sysinfo/master/
 FILES=( "sysinfo" "sysinfo_settings" )
 REMOVE=( "Help.md" "rsysinfo" "arg" "custom_settings")
-VER="v1.1.5"
+VER="v1.1.6"
 
 echo sysinfo install/update started $VER
 
@@ -42,7 +42,7 @@ if ! grep -qF "source $sysinfo_settings" "$bashrc_file"; then
     echo "Sysinfo settings sourced to $bashrc_fie"
 else
     echo
-    echo "Sysinfo settings already sourced to $bashrc_file"
+    # echo "Sysinfo settings already sourced to $bashrc_file"
 fi
 
 # make sure to reload to include latest sysinfo settings
