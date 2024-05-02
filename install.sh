@@ -47,6 +47,7 @@ fi
 
 # make sure to reload to include latest sysinfo settings
 source $bashrc_file
+echo "Type source ~/.bashrc for updated settings to take effect."
 
 echo
 echo sysinfo install/update complete $VER
